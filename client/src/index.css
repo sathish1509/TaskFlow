@@ -1,3 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Global smooth transition for seamless Dark/Light Mode switching */
+*, ::before, ::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
+}
